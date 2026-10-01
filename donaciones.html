@@ -23,7 +23,6 @@
             <p>Mantener nuestro refugio y alimentar a los rescatados requiere el apoyo de toda la comunidad. Conoce las necesidades actuales y cómo hacernos llegar tu aportación.</p>
 
             <div class="donaciones-grid">
-                <!-- Suministros Solicitados -->
                 <div class="caja-info">
                     <h3>📦 Suministros Solicitados</h3>
                     <ul>
@@ -35,7 +34,6 @@
                     </ul>
                 </div>
 
-                <!-- Centro de Acopio -->
                 <div class="caja-info">
                     <h3>📍 Centro de Acopio</h3>
                     <p><strong>Ubicación:</strong> Zona Comunitaria Principal, Módulo B.</p>
@@ -45,12 +43,34 @@
                 </div>
             </div>
 
-            <!-- Extra para que la página de donaciones tenga más contenido útil -->
-            <div style="margin-top: 30px; background: #fcfcfc; border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px;">
-                <h3 style="color: #2d5a27; margin-top:0;">🤝 ¿Vas a donar suministros próximamente?</h3>
-                <p>Regístranos tu aviso de donación para tener preparado el espacio en el Módulo B:</p>
-                <input type="text" placeholder="Tu nombre o el de tu grupo" style="width:100%; max-width:300px; padding:8px; margin-right:10px; border:1px solid #ccc; border-radius:4px; margin-bottom:10px;">
-                <button class="boton-accion" style="width:auto; display:inline-block;" onclick="alert('¡Gracias por apoyar al Proyecto PAEC! Te esperamos en el Módulo B.')">Avisar Donación</button>
+            <!-- Formulario detallado de donación -->
+            <div style="margin-top: 30px; background: #fcfcfc; border: 1px solid #e0e0e0; padding: 25px; border-radius: 8px;">
+                <h3 style="color: #2d5a27; margin-top:0;">🤝 Agendar Entrega de Donación</h3>
+                <p>Completa los detalles de tu aportación para esperarte en el Módulo B:</p>
+                
+                <form onsubmit="alert('¡Donación registrada con éxito! Te esperamos en el horario seleccionado.'); return false;">
+                    <div style="margin-bottom: 12px;">
+                        <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">Tu nombre o grupo:</label>
+                        <input type="text" required placeholder="Ej. Juan Pérez" style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">¿Qué deseas donar?</label>
+                        <input type="text" required placeholder="Ej. Croquetas y cobijas" style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                    </div>
+
+                    <div style="margin-bottom: 12px;">
+                        <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">Día que asistirás:</label>
+                        <input type="date" required style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">Hora estimada:</label>
+                        <input type="time" required style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                    </div>
+
+                    <button type="submit" class="boton-accion" style="width:auto; display:inline-block; padding: 10px 20px;">Registrar Donación</button>
+                </form>
             </div>
         </section>
     </main>

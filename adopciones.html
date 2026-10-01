@@ -29,7 +29,7 @@
                     <h3>Max</h3>
                     <p><strong>Edad:</strong> 1 año y medio</p>
                     <p>Juguetón, amigable con otros perros y muy obediente. Vacunado y esterilizado.</p>
-                    <button class="boton-accion" onclick="abrirFormulario('Max')">Adoptar a Max</button>
+                    <a href="papeleo.html?mascota=Max" class="boton-accion" style="text-decoration: none; display: block; box-sizing: border-box;">Adoptar a Max</a>
                 </div>
 
                 <!-- Tarjeta Luna -->
@@ -38,7 +38,7 @@
                     <h3>Luna</h3>
                     <p><strong>Edad:</strong> 8 meses</p>
                     <p>Tranquila, le encanta dormir al sol y es muy cariñosa. Desparasitada y sana.</p>
-                    <button class="boton-accion" onclick="abrirFormulario('Luna')">Adoptar a Luna</button>
+                    <a href="papeleo.html?mascota=Luna" class="boton-accion" style="text-decoration: none; display: block; box-sizing: border-box;">Adoptar a Luna</a>
                 </div>
 
                 <!-- Tarjeta Rocky -->
@@ -47,75 +47,15 @@
                     <h3>Rocky</h3>
                     <p><strong>Edad:</strong> 2 años</p>
                     <p>Muy enérgico, ideal para patios grandes o familias activas. Le encanta correr.</p>
-                    <button class="boton-accion" onclick="abrirFormulario('Rocky')">Adoptar a Rocky</button>
+                    <a href="papeleo.html?mascota=Rocky" class="boton-accion" style="text-decoration: none; display: block; box-sizing: border-box;">Adoptar a Rocky</a>
                 </div>
             </div>
-
-            <!-- Sección de Papeleo / Formulario (Oculto inicialmente) -->
-            <div id="seccion-papeleo" style="display:none; margin-top: 40px; background: #f4f8f3; padding: 25px; border-radius: 8px; border: 1px solid #c8e6c9;">
-                <h3 id="titulo-form" style="color: #2d5a27; margin-top:0;">📝 Papeleo de Adopción</h3>
-                <p>Completa tus datos para iniciar el proceso con <span id="nombre-mascota-form"></span>:</p>
-                <form id="form-adopcion" onsubmit="generarTicket(event)">
-                    <div style="margin-bottom: 12px;">
-                        <label style="display:block; font-size:14px; font-weight:bold;">Nombre completo:</label>
-                        <input type="text" id="inp-nombre" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
-                    </div>
-                    <div style="margin-bottom: 12px;">
-                        <label style="display:block; font-size:14px; font-weight:bold;">Teléfono de contacto:</label>
-                        <input type="tel" id="inp-tel" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display:block; font-size:14px; font-weight:bold;">¿Por qué deseas adoptarle?</label>
-                        <textarea id="inp-razon" rows="3" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;"></textarea>
-                    </div>
-                    <button type="submit" class="boton-accion" style="background-color: #2d5a27;">Enviar y Generar Ticket</button>
-                </form>
-
-                <!-- Mini Ticket de Referencia (Oculto hasta enviar) -->
-                <div id="mini-ticket" style="display:none; margin-top:20px; background:white; padding:20px; border: 2px dashed #2d5a27; border-radius:6px; font-family: monospace;">
-                    <h4 style="margin:0 0 10px 0; color:#2d5a27; text-align:center;">🎟️ TICKET DE REFERENCIA PAEC</h4>
-                    <p><strong>Folio:</strong> <span id="t-folio"></span></p>
-                    <p><strong>Adoptante:</strong> <span id="t-nombre"></span></p>
-                    <p><strong>Teléfono:</strong> <span id="t-tel"></span></p>
-                    <p><strong>Mascota Solicitada:</strong> <span id="t-mascota"></span></p>
-                    <p><strong>Fecha:</strong> 01/10/2026</p>
-                    <hr style="border:0; border-top:1px dashed #ccc;">
-                    <p style="font-size:12px; text-align:center; margin-bottom:0;">¡Presenta este ticket en el refugio para validar tu solicitud!</p>
-                </div>
-            </div>
-
         </section>
     </main>
 
     <footer>
         <p>Proyecto PAEC - Huellitas Comunitarias &copy; 2026. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        let mascotaSeleccionada = "";
-        function abrirFormulario(mascota) {
-            mascotaSeleccionada = mascota;
-            document.getElementById('nombre-mascota-form').innerText = mascota;
-            document.getElementById('seccion-papeleo').style.display = 'block';
-            document.getElementById('mini-ticket').style.display = 'none';
-            document.getElementById('seccion-papeleo').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function generarTicket(e) {
-            e.preventDefault();
-            let nombre = document.getElementById('inp-nombre').value;
-            let tel = document.getElementById('inp-tel').value;
-            let folioAleatorio = Math.floor(100000 + Math.random() * 900000);
-
-            document.getElementById('t-folio').innerText = "#" + folioAleatorio;
-            document.getElementById('t-nombre').innerText = nombre;
-            document.getElementById('t-tel').innerText = tel;
-            document.getElementById('t-mascota').innerText = mascotaSeleccionada;
-
-            document.getElementById('mini-ticket').style.display = 'block';
-            document.getElementById('mini-ticket').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
 
 </body>
 </html>
