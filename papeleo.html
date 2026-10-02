@@ -12,7 +12,7 @@
         <h1>🐾 Huellitas Comunitarias</h1>
         <nav class="barra-navegacion">
             <a href="index.html" class="boton-nav">Inicio</a>
-            <a href="adopciones.html" class="boton-nav activo">Adopciones</a>
+            <a href="adopciones.html" class="boton-nav">Adopciones</a>
             <a href="donaciones.html" class="boton-nav">Donaciones</a>
         </nav>
     </header>
@@ -39,19 +39,26 @@
                     <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">¿Por qué deseas adoptarle?</label>
                     <textarea id="inp-razon" rows="3" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;"></textarea>
                 </div>
-                <button type="submit" class="boton-accion">Enviar y Generar Ticket</button>
+                <button type="submit" class="boton-accion">Enviar Solicitud y Generar Ticket</button>
             </form>
 
-            <!-- Mini Ticket de Referencia (Oculto al inicio) -->
-            <div id="mini-ticket" style="display:none; margin-top:30px; background:white; padding:20px; border: 2px dashed #2d5a27; border-radius:6px; font-family: monospace;">
-                <h4 style="margin:0 0 10px 0; color:#2d5a27; text-align:center;">🎟️ TICKET DE REFERENCIA PAEC</h4>
-                <p><strong>Folio:</strong> <span id="t-folio"></span></p>
-                <p><strong>Adoptante:</strong> <span id="t-nombre"></span></p>
-                <p><strong>Teléfono:</strong> <span id="t-tel"></span></p>
-                <p><strong>Mascota Solicitada:</strong> <span id="t-mascota"></span></p>
-                <p><strong>Fecha:</strong> 01/10/2026</p>
-                <hr style="border:0; border-top:1px dashed #ccc;">
-                <p style="font-size:12px; text-align:center; margin-bottom:0;">¡Presenta este ticket impreso o digital en el refugio para validar tu solicitud!</p>
+            <!-- Mensaje Bonito y Mini Ticket (Ocultos al inicio) -->
+            <div id="contenedor-resultado" style="display:none; margin-top:30px;">
+                <div style="background: #e8f5e9; border-left: 5px solid #2d5a27; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+                    <h3 style="color: #2d5a27; margin: 0 0 5px 0;">🎉 ¡Solicitud Registrada con Éxito!</h3>
+                    <p style="margin: 0; color: #333;">Hemos guardado tu información correctamente. Aquí tienes tu comprobante oficial para presentar en el refugio:</p>
+                </div>
+
+                <div id="mini-ticket" style="background:white; padding:20px; border: 2px dashed #2d5a27; border-radius:6px; font-family: monospace;">
+                    <h4 style="margin:0 0 10px 0; color:#2d5a27; text-align:center;">🎟️ TICKET DE REFERENCIA PAEC</h4>
+                    <p><strong>Folio:</strong> <span id="t-folio"></span></p>
+                    <p><strong>Adoptante:</strong> <span id="t-nombre"></span></p>
+                    <p><strong>Teléfono:</strong> <span id="t-tel"></span></p>
+                    <p><strong>Mascota Solicitada:</strong> <span id="t-mascota"></span></p>
+                    <p><strong>Fecha:</strong> 02/10/2026</p>
+                    <hr style="border:0; border-top:1px dashed #ccc;">
+                    <p style="font-size:12px; text-align:center; margin-bottom:0;">¡Presenta este ticket impreso o digital en el refugio para validar tu solicitud!</p>
+                </div>
             </div>
         </section>
     </main>
@@ -61,7 +68,6 @@
     </footer>
 
     <script>
-        // Detectar qué mascota eligió el usuario mediante la URL (ej. papeleo.html?mascota=Max)
         const params = new URLSearchParams(window.location.search);
         const mascota = params.get('mascota') || "nuestra mascota";
         document.getElementById('lbl-mascota').innerText = mascota;
@@ -77,8 +83,10 @@
             document.getElementById('t-tel').innerText = tel;
             document.getElementById('t-mascota').innerText = mascota;
 
-            document.getElementById('mini-ticket').style.display = 'block';
-            document.getElementById('mini-ticket').scrollIntoView({ behavior: 'smooth' });
+            // Ocultar formulario y mostrar el mensaje bonito con el ticket
+            document.getElementById('form-papeleo').style.display = 'none';
+            document.getElementById('contenedor-resultado').style.display = 'block';
+            document.getElementById('contenedor-resultado').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 

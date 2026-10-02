@@ -43,34 +43,41 @@
                 </div>
             </div>
 
-            <!-- Formulario detallado de donación -->
+            <!-- Formulario de Donación con Confirmación Bonita -->
             <div style="margin-top: 30px; background: #fcfcfc; border: 1px solid #e0e0e0; padding: 25px; border-radius: 8px;">
                 <h3 style="color: #2d5a27; margin-top:0;">🤝 Agendar Entrega de Donación</h3>
                 <p>Completa los detalles de tu aportación para esperarte en el Módulo B:</p>
                 
-                <form onsubmit="alert('¡Donación registrada con éxito! Te esperamos en el horario seleccionado.'); return false;">
+                <form id="form-donacion" onsubmit="confirmarDonacion(event)">
                     <div style="margin-bottom: 12px;">
                         <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">Tu nombre o grupo:</label>
-                        <input type="text" required placeholder="Ej. Juan Pérez" style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                        <input type="text" id="don-nombre" required placeholder="Ej. Juan Pérez" style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
                     </div>
                     
                     <div style="margin-bottom: 12px;">
                         <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">¿Qué deseas donar?</label>
-                        <input type="text" required placeholder="Ej. Croquetas y cobijas" style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                        <input type="text" id="don-item" required placeholder="Ej. Croquetas y cobijas" style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
                     </div>
 
                     <div style="margin-bottom: 12px;">
                         <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">Día que asistirás:</label>
-                        <input type="date" required style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                        <input type="date" id="don-dia" required style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
                     </div>
 
                     <div style="margin-bottom: 15px;">
                         <label style="display:block; font-size:14px; font-weight:bold; margin-bottom:5px;">Hora estimada:</label>
-                        <input type="time" required style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                        <input type="time" id="don-hora" required style="width:100%; max-width:400px; padding:8px; border:1px solid #ccc; border-radius:4px;">
                     </div>
 
-                    <button type="submit" class="boton-accion" style="width:auto; display:inline-block; padding: 10px 20px;">Registrar Donación</button>
+                    <button type="submit" class="boton-accion" style="width:auto; display:inline-block; padding: 10px 20px;">Confirmar y Registrar Donación</button>
                 </form>
+
+                <!-- Mensaje bonito de confirmación (Oculto al inicio) -->
+                <div id="mensaje-exito-donacion" style="display:none; margin-top:20px; background:#f4f8f3; border: 1px solid #2d5a27; padding:20px; border-radius:6px; text-align:center;">
+                    <h4 style="color:#2d5a27; margin-top:0;">💚 ¡Muchas gracias por tu generosidad!</h4>
+                    <p style="margin-bottom:10px;">Tu registro de donación ha sido guardado exitosamente. Te esperamos en el Módulo B.</p>
+                    <button onclick="resetearFormDonacion()" style="background-color: #2d5a27; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Hacer otra donación</button>
+                </div>
             </div>
         </section>
     </main>
@@ -78,6 +85,21 @@
     <footer>
         <p>Proyecto PAEC - Huellitas Comunitarias &copy; 2026. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function confirmarDonacion(e) {
+            e.preventDefault();
+            document.getElementById('form-donacion').style.display = 'none';
+            document.getElementById('mensaje-exito-donacion').style.display = 'block';
+            document.getElementById('mensaje-exito-donacion').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetearFormDonacion() {
+            document.getElementById('form-donacion').reset();
+            document.getElementById('form-donacion').style.display = 'block';
+            document.getElementById('mensaje-exito-donacion').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
