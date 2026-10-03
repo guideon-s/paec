@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentra tu Compañero Ideal - Huellitas Comunitarias</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Barra de Navegación -->
+    <header>
+        <div class="logo">🐾 Huellitas Comunitarias</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Adopciones</a>
+            <a href="historias.html">Historias Felices</a>
+            <a href="donaciones.html">Donaciones</a>
+            <a href="voluntariado.html">Voluntariado</a>
+        </nav>
+    </header>
+
+    <!-- Título de la Sección -->
+    <section class="seccion-titulo">
+        <h1>🧠 Test de Compatibilidad: Encuentra tu Match</h1>
+        <p>Responde 3 breves preguntas y nuestra IA de compatibilidad te recomendará al rescatado ideal según tu estilo de vida en Tijuana.</p>
+    </section>
+
+    <!-- Contenedor del Test -->
+    <main style="max-width: 700px; margin: 20px auto 60px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06);">
+        
+        <form id="form-test" onsubmit="calcularMatch(event)">
+            
+            <!-- Pregunta 1 -->
+            <div style="margin-bottom: 25px;">
+                <label style="font-weight: 600; font-size: 16px; color: #2c3e50; display: block; margin-bottom: 10px;">1. ¿Qué tipo de espacio tienes en casa?</label>
+                <select id="espacio" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px;">
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="depa">Departamento pequeño / Sin patio</option>
+                    <option value="mediano">Casa con patio pequeño o mediano</option>
+                    <option value="grande">Casa con patio grande / Amplio espacio</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div style="margin-bottom: 25px;">
+                <label style="font-weight: 600; font-size: 16px; color: #2c3e50; display: block; margin-bottom: 10px;">2. ¿Cuánto tiempo libre tienes al día para paseos y ejercicio?</label>
+                <select id="tiempo" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px;">
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="poco">Menos de 30 minutos (Busco algo tranquilo)</option>
+                    <option value="medio">De 30 a 60 minutos (Paseos moderados)</option>
+                    <option value="alto">Más de 1 hora (Me encanta correr y salir mucho)</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div style="margin-bottom: 25px;">
+                <label style="font-weight: 600; font-size: 16px; color: #2c3e50; display: block; margin-bottom: 10px;">3. ¿Prefieres un perrito o un gatito?</label>
+                <select id="preferencia" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px;">
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="gato">Gatito independiente o tranquilo</option>
+                    <option value="perro_tranquilo">Perrito calmado y hogareño</option>
+                    <option value="perro_activo">Perrito activo y juguetón</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-principal" style="width: 100%; border: none; text-align: center; font-size: 16px; cursor: pointer;">Analizar Compatibilidad 🤖</button>
+        </form>
+
+        <!-- Resultado Oculto que aparecerá al completar el test -->
+        <div id="resultado-match" style="display: none; margin-top: 30px; text-align: center; border-top: 2px solid #eee; padding-top: 25px;">
+            <h2 style="color: #27ae60; margin-bottom: 15px;">¡Hemos encontrado a tu compañero ideal! 🎉</h2>
+            <div id="detalle-mascota" style="background: #fdfefe; border: 1px solid #e2e8f0; padding: 20px; border-radius: 10px; display: inline-block; width: 100%; text-align: left;">
+                <!-- Aquí se inyectará dinámicamente la mascota recomendada -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script de Inteligencia de Compatibilidad -->
+    <script>
+        function calcularMatch(event) {
+            event.preventDefault();
+            
+            const espacio = document.getElementById('espacio').value;
+            const tiempo = document.getElementById('tiempo').value;
+            const preferencia = document.getElementById('preferencia').value;
+
+            let mascotaRecomendada = {};
+
+            // Lógica de recomendación basada en respuestas
+            if (preferencia === 'gato') {
+                mascotaRecomendada = {
+                    nombre: "Luna",
+                    tipo: "Gatita (1 año)",
+                    descripcion: "Es muy tranquila, le encanta dormir al sol y es perfecta para departamentos o espacios reducidos.",
+                    img: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80"
+                };
+            } else if (preferencia === 'perro_activo' || tiempo === 'alto') {
+                mascotaRecomendada = {
+                    nombre: "Max",
+                    tipo: "Perrito Activo (2 años)",
+                    descripcion: "Le encanta correr, es sumamente alegre y necesita una familia con energía para sus paseos diarios en Tijuana.",
+                    img: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80"
+                };
+            } else {
+                mascotaRecomendada = {
+                    nombre: "Simba",
+                    tipo: "Gatito / Perrito Hogareño",
+                    descripcion: "Muy cariñoso, adaptable y busca un hogar cálido donde dar mucho amor y compañía sin requerir alta exigencia de ejercicio.",
+                    img: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80"
+                };
+            }
+
+            // Mostrar el resultado en pantalla
+            const contenedorResultado = document.getElementById('resultado-match');
+            const detalleMascota = document.getElementById('detalle-mascota');
+
+            detalleMascota.innerHTML = `
+                <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                    <img src="${mascotaRecomendada.img}" alt="${mascotaRecomendada.nombre}" style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%;">
+                    <div style="flex: 1;">
+                        <h3 style="color: #e67e22; font-size: 24px; margin-bottom: 5px;">${mascotaRecomendada.nombre}</h3>
+                        <p style="font-weight: bold; color: #555; margin-bottom: 8px;">${mascotaRecomendada.tipo}</p>
+                        <p style="color: #666; margin-bottom: 15px;">${mascotaRecomendada.descripcion}</p>
+                        <a href="catalogo.html" class="btn-principal" style="padding: 8px 18px; font-size: 14px; text-decoration: none;">Ver en el Catálogo</a>
+                    </div>
+                </div>
+            `;
+
+            contenedorResultado.style.display = 'block';
+            contenedorResultado.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Huellitas Comunitarias - Tijuana, B.C. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
