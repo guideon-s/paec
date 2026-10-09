@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariado - Huellitas Comunitarias</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Barra de Navegación -->
+    <header>
+        <div class="logo">🐾 Huellitas Comunitarias</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Adopciones</a>
+            <a href="historias.html">Historias Felices</a>
+            <a href="donaciones.html">Donaciones</a>
+            <a href="voluntariado.html" class="activo">Voluntariado</a>
+        </nav>
+    </header>
+
+    <!-- Título de la Sección -->
+    <section class="seccion-titulo">
+        <h1>🤝 Únete como Voluntario</h1>
+        <p>El motor principal de nuestro refugio son las manos y el corazón de nuestra comunidad en Tijuana. ¡Regálanos unas horas de tu tiempo y cambia la vida de nuestros rescatados!</p>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main style="max-width: 900px; margin: 0 auto 60px auto; padding: 0 20px;">
+        
+        <!-- Información General y Dirección -->
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); margin-bottom: 30px;">
+            <h2 style="color: #2c3e50; font-size: 22px; margin-bottom: 15px;">📍 Información y Ubicación del Voluntariado</h2>
+            <p style="color: #555; line-height: 1.6; margin-bottom: 10px;"><strong>Dirección base:</strong> Blvd. Agua Caliente #1234, Col. Cacho, Tijuana, B.C.</p>
+            <p style="color: #555; line-height: 1.6; margin-bottom: 10px;"><strong>Requisitos:</strong> Ser mayor de 14 años, muchas ganas de ayudar y amor por los animales (¡no pedimos INE ni trámites pesados!).</p>
+            <p style="color: #555; line-height: 1.6;"><strong>Horarios de inducción:</strong> Sábados de 10:00 AM a 12:00 PM.</p>
+        </div>
+
+        <!-- Áreas de Apoyo -->
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); margin-bottom: 30px;">
+            <h2 style="color: #2c3e50; font-size: 22px; margin-bottom: 15px;">🌟 Áreas en las que puedes ayudar</h2>
+            <ul style="list-style-type: none; padding-left: 0; color: #555; line-height: 1.8;">
+                <li>🐕 <strong>Paseos y Socialización:</strong> Ayuda a que los perritos se ejerciten y pierdan el miedo.</li>
+                <li>🧹 <strong>Mantenimiento y Limpieza:</strong> Apoya organizando y desinfectando las áreas comunes.</li>
+                <li>🏡 <strong>Eventos de Adopción:</strong> Acompaña en las ferias comunitarias de fin de semana.</li>
+                <li>📸 <strong>Fotografía y Redes:</strong> Captura fotos y videos para difundir fichas de adopción.</li>
+            </ul>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.06);">
+            <h2 style="color: #2c3e50; font-size: 22px; margin-bottom: 10px;">📝 Registro Rápido</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Llena tus datos para generar tu credencial oficial de voluntario:</p>
+            
+            <form id="form-voluntario" onsubmit="prepararConfirmacion(event)">
+                <div style="margin-bottom: 20px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 8px; color: #333;">Nombre completo:</label>
+                    <input type="text" id="nombre-voluntario" placeholder="Ej. Juan Pérez" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 8px; color: #333;">Correo o Teléfono:</label>
+                    <input type="text" id="contacto-voluntario" placeholder="Ej. (664) 123-4567" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px;">
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 8px; color: #333;">Área de interés:</label>
+                    <select id="area-voluntario" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px;">
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="Paseos y Socialización Canina">Paseos y Socialización Canina</option>
+                        <option value="Mantenimiento y Refugio">Mantenimiento y Refugio</option>
+                        <option value="Eventos y Ferias de Adopción">Eventos y Ferias de Adopción</option>
+                        <option value="Fotografía y Redes Sociales">Fotografía y Redes Sociales</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-principal" style="width: 100%; border: none; text-align: center; font-size: 16px; cursor: pointer;">Generar mi Credencial</button>
+            </form>
+
+            <!-- Paso Intermedio: ¿Estás seguro? -->
+            <div id="seccion-seguro" style="display: none; margin-top: 25px; background: #fdfefe; border: 2px dashed #e67e22; padding: 25px; border-radius: 8px; text-align: center;">
+                <h3 style="color: #2c3e50; margin-bottom: 10px;">🤔 ¿Estás seguro de unirte al equipo?</h3>
+                <p style="color: #666; margin-bottom: 20px;">Al confirmar, se emitirá tu gafete oficial como voluntario autorizado de Huellitas Comunitarias.</p>
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <button onclick="generarCredencialFinal()" class="btn-principal" style="padding: 10px 25px; font-size: 14px; border: none;">Sí, ¡estoy seguro!</button>
+                    <button onclick="cancelarRegistro()" class="btn-secundario" style="padding: 10px 25px; font-size: 14px;">Cancelar</button>
+                </div>
+            </div>
+
+            <!-- Credencial Oficial Generada -->
+            <div id="credencial-oficial" style="display: none; margin-top: 25px; background: #ffffff; border: 2px solid #27ae60; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                <div style="background: #2c3e50; color: white; padding: 10px; border-radius: 6px; margin-bottom: 15px;">
+                    <h3 style="margin: 0; font-size: 18px;">🐾 HUELLITAS COMUNITARIAS</h3>
+                    <p style="margin: 0; font-size: 12px; opacity: 0.8;">Credencial Oficial de Voluntario - Tijuana, B.C.</p>
+                </div>
+
+                <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 15px;">
+                    <img id="foto-perfil" src="" alt="Foto Voluntario" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #e67e22;">
+                    <div style="text-align: left;">
+                        <h4 id="cred-nombre" style="font-size: 20px; color: #2c3e50; margin-bottom: 5px;"></h4>
+                        <p style="font-size: 13px; color: #555; margin-bottom: 3px;"><strong>Área:</strong> <span id="cred-area"></span></p>
+                        <p style="font-size: 13px; color: #27ae60; font-weight: bold; margin: 0;">✔ ACTIVO / AUTORIZADO</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 12px; color: #666; margin-bottom: 15px; letter-spacing: 2px;">
+                    ||| | |||| || | |||||| || | ID: 2026-VOL-8894
+                </div>
+
+                <button onclick="reiniciarTodo()" class="btn-secundario" style="background-color: white; border: 2px solid #e67e22; color: #e67e22; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 13px;">Registrar otro voluntario ➕</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script con IA de detección de género por nombre y manejo de credencial -->
+    <script>
+        let datosTemporales = {};
+
+        function prepararConfirmacion(event) {
+            event.preventDefault();
+            
+            // Guardar temporalmente los datos del formulario
+            datosTemporales.nombre = document.getElementById('nombre-voluntario').value;
+            datosTemporales.contacto = document.getElementById('contacto-voluntario').value;
+            datosTemporales.area = document.getElementById('area-voluntario').value;
+
+            // Ocultar formulario y mostrar pregunta de confirmación
+            document.getElementById('form-voluntario').style.display = 'none';
+            document.getElementById('seccion-seguro').style.display = 'block';
+            document.getElementById('seccion-seguro').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function cancelarRegistro() {
+            document.getElementById('seccion-seguro').style.display = 'none';
+            document.getElementById('form-voluntario').style.display = 'block';
+        }
+
+        function generarCredencialFinal() {
+            document.getElementById('seccion-seguro').style.display = 'none';
+            
+            const nombre = datosTemporales.nombre;
+            document.getElementById('cred-nombre').innerText = nombre;
+            document.getElementById('cred-area').innerText = datosTemporales.area;
+
+            // Pequeña IA basada en heurística de nombres para asignar la foto correcta
+            const nombreMinus = nombre.toLowerCase().trim();
+            const ultimaLetra = nombreMinus.slice(-1);
+            
+            // Enlaces proporcionados por ti para hombre y mujer
+            const linkHombre = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGYztkhPw-0JZhqO2_-JgNq9AIdVHb6ojS7rtx65lHnXn7TQyUummOFas&s=10";
+            const linkMujer = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKTMmAUFH3NFOvp-WNSzXSiISaytp56uPeBZxT9GCcJa0fOq4j6_tOA_aP&s=10";
+
+            // Si termina en 'a' o 'e' (con excepciones comunes), tiende a ser femenino en español; de lo contrario masculino.
+            const nombresFemeninosTipicos = ['maria', 'ana', 'sofia', 'valeria', 'camila', 'daniela', 'lucia', 'gabriela', 'fernanda', 'paula'];
+            
+            let esMujer = ultimaLetra === 'a' || nombresFemeninosTipicos.includes(nombreMinus.split(' ')[0]);
+
+            if (esMujer) {
+                document.getElementById('foto-perfil').src = linkMujer;
+            } else {
+                document.getElementById('foto-perfil').src = linkHombre;
+            }
+
+            // Mostrar la credencial oficial
+            document.getElementById('credencial-oficial').style.display = 'block';
+            document.getElementById('credencial-oficial').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function reiniciarTodo() {
+            document.getElementById('form-voluntario').reset();
+            document.getElementById('credencial-oficial').style.display = 'none';
+            document.getElementById('form-voluntario').style.display = 'block';
+            document.getElementById('form-voluntario').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Huellitas Comunitarias - Tijuana, B.C. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
