@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Adopciones - Huellitas Comunitarias</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Barra de Navegación -->
+    <header>
+        <div class="logo">🐾 Huellitas Comunitarias</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html" class="activo">Adopciones</a>
+            <a href="historias.html">Historias Felices</a>
+            <a href="donaciones.html">Donaciones</a>
+            <a href="voluntariado.html">Voluntariado</a>
+        </nav>
+    </header>
+
+    <!-- Título de la Sección -->
+    <section class="seccion-titulo">
+        <h1>🏡 Encuentra a tu Nuevo Mejor Amigo</h1>
+        <p>Todos nuestros rescatados se entregan vacunados, esterilizados y desparasitados. Conoce a quienes buscan una segunda oportunidad en Tijuana.</p>
+    </section>
+
+    <!-- Filtros de Adopción -->
+    <div class="filtros-container">
+        <button class="btn-filtro activo" onclick="filtrar('todos')">Todos</button>
+        <button class="btn-filtro" onclick="filtrar('perro')">Perritos</button>
+        <button class="btn-filtro" onclick="filtrar('gato')">Gatitos</button>
+    </div>
+
+    <!-- Catálogo de Mascotas -->
+    <section class="catalogo-grid">
+
+        <!-- ================= PERRITOS ================= -->
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://foodandpleasure.com/wp-content/uploads/2022/01/heroes-por-adopcion-cdmx.jpeg" alt="Max">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>rayo</h3>
+                <p><strong>Edad:</strong> 2 años | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Encontrado vagando cerca de Playas de Tijuana con desnutrición leve. Hoy es un perrito muy alegre y activo.</p>
+                <a href="adoptar-max.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Max</a>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUY1rGOp6mD1H8k6fcDCQBlL8YrcI2zg0yCFVQviQEPG0vTMKb705R5wU&s=10" alt="Rocky">
+            <div class="card-info">
+                <span class="etiqueta-proceso">En Proceso</span>
+                <h3>pinto</h3>
+                <p><strong>Edad:</strong> 3 años | <strong>Tamaño:</strong> Grande</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Entregado por motivos de mudanza. Es sumamente noble, protector y convive excelente con niños.</p>
+                <button class="btn-secundario" style="width: 100%; margin-top: 15px; cursor: not-allowed; opacity: 0.7;">En Proceso de Adopción</button>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo7ep76GMyMBHeMSqoKn9etOfZv70ElDVgFQMEQ5UY8A&s" alt="Thor">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Thor</h3>
+                <p><strong>Edad:</strong> 3 años | <strong>Tamaño:</strong> Grande</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Rescatado en la zona de La Mesa. Es un perro de trabajo muy inteligente, noble y con gran disciplina.</p>
+                <a href="adoptar-thor.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Thor</a>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://purina.com.mx/sites/default/files/2022-10/mascotas-en-adopcion-beneficios-y-requisitos-para-adoptar-un-perro-o-gato.png" alt="Negrito">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Negrito</h3>
+                <p><strong>Edad:</strong> 2 años | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Encontrado buscando refugio cerca de los mercados sobre ruedas en Zona Río. Muy noble y agradecido.</p>
+                <a href="adoptar-negrito.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Negrito</a>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://purina.com.mx/sites/default/files/2025-09/perros-en-adopcion-cachorro.jpg" alt="Firulais">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Firulais</h3>
+                <p><strong>Edad:</strong> 10 meses | <strong>Tamaño:</strong> Pequeño / Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Entregado por vecinos de la Col. Obrera. Es un cachorro juguetón, lleno de energía y listo para una familia.</p>
+                <a href="adoptar-firulais.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Firulais</a>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc6vSJyhxZQH-cl-hMTasHiWhObJOvj3ARxyhB1v3WwJf_1-T40Ll1uu8Q&s=10" alt="Kaiser">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Kaiser</h3>
+                <p><strong>Edad:</strong> 4 años | <strong>Tamaño:</strong> Grande</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Donado por una familia que se mudó al extranjero. Excelente temperamento, ideal para casas con niños.</p>
+                <a href="adoptar-kaiser.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Kaiser</a>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://www.poblanerias.com/wp-content/archivos/2022/12/adopcion-de-perros.jpg" alt="Canela">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Canela</h3>
+                <p><strong>Edad:</strong> 2 años y medio | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Rescatada en Playas de Tijuana con un pelaje muy descuidado. Hoy luce hermosa, cariñosa y tranquila.</p>
+                <a href="adoptar-canela.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Canela</a>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://portal.zapopan.gob.mx/proteccion_animal2/fotos/Ado_8094.jpg" alt="Lucas">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Lucas</h3>
+                <p><strong>Edad:</strong> 1 año y medio | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Encontrado merodeando por el bulevar Insurgentes. Muy amigable con otros perros y lleno de vitalidad.</p>
+                <a href="adoptar-lucas.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Lucas</a>
+            </div>
+        </div>
+
+        <div class="card-mascota" data-categoria="perro">
+            <img src="https://www.rtv.org.mx/masnoticias/wp-content/uploads/sites/13/2026/06/perro-adopcion-Coatza.jpeg" alt="Zeus">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Zeus</h3>
+                <p><strong>Edad:</strong> 3 años | <strong>Tamaño:</strong> Grande</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Rescatado en una zona industrial de Otay. Es un guardián amoroso, noble y muy leal.</p>
+                <a href="adoptar-zeus.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Zeus</a>
+            </div>
+        </div>
+
+        <!-- ================= GATITOS (NUEVOS 8) ================= -->
+
+        <!-- 1. Togor -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://purina.com.mx/sites/default/files/2025-08/gatos-en-adopcion-refugio.jpg" alt="Togor">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Togor</h3>
+                <p><strong>Edad:</strong> 1 año | <strong>Tamaño:</strong> Pequeño</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Recién llegado al refugio tras ser encontrado en la Col. Cacho. Es muy curioso y sociable.</p>
+                <a href="adoptar-togor.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Togor</a>
+            </div>
+        </div>
+
+        <!-- 2. Michi -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdIyPdUiyON6N1kq8CGWg1eGrivaJJWOOwB22s8nD3OoUzlMcUjLDq8sMU&s=10" alt="Michi">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Michi</h3>
+                <p><strong>Edad:</strong> 8 meses | <strong>Tamaño:</strong> Pequeño</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Rescatado de un terreno baldío en Playas de Tijuana. Muy tierno y busca un hogar cálido.</p>
+                <a href="adoptar-michi.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Michi</a>
+            </div>
+        </div>
+
+        <!-- 3. Cleo -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgVS6JP4RufR2pCi3Aahho8ITyMP_Y9ac6ShHkMRM90sIB_BCFCLBCw99b&s=10" alt="Cleo">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Cleo</h3>
+                <p><strong>Edad:</strong> 4 meses | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Acostumbrada a recibir mimos y atención, rescatada en Zona Río. Super tranquila y hogareña.</p>
+                <a href="adoptar-cleo.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Cleo</a>
+            </div>
+        </div>
+
+        <!-- 4. Pancho -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmOsdqYypdLLYPFUwU50Y-Pr-EKsNt-wzlnceczodoRrBSADoMqmhe8FI&s=10" alt="Pancho">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Pancho</h3>
+                <p><strong>Edad:</strong> 1 año y medio | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Encontrado explorando los techos en la Col. Libertad. Muy observador, inteligente y activo.</p>
+                <a href="adoptar-pancho.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Pancho</a>
+            </div>
+        </div>
+
+        <!-- 5. Moway -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNEgGlMWOHFWTDggK2moe3soMhvsrOPIEn1qSlbwLp4zTMaPyErSf4gB0&s=10" alt="Moway">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Moway</h3>
+                <p><strong>Edad:</strong> 1 año con 8 meses | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Gato rescatado con apoyo de terapeutas felinos en Tijuana. Muy noble, paciente y limpio.</p>
+                <a href="adoptar-moway.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Moway</a>
+            </div>
+        </div>
+
+        <!-- 6. Pelusa -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQLP2loUf0s_DvGX2huSFOuxPgrVQU7qiZpF9BmaEBby2FpogXZt4ufwp9&s=10" alt="Pelusa">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Pelusa</h3>
+                <p><strong>Edad:</strong> 10 meses | <strong>Tamaño:</strong> Pequeño</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Encontrada cerca de Otay con un pelaje suave y peculiar. Le encanta dormir en lugares altos y seguros.</p>
+                <a href="adoptar-pelusa.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Pelusa</a>
+            </div>
+        </div>
+
+        <!-- 7. Copito -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXZtymzYIL8WAGG-R9CJ2AOrW9N5WtDFTVEWbrntcmBfQTzjAbRzeF8V3b&s=10" alt="Copito">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Copito</h3>
+                <p><strong>Edad:</strong> 10 meses | <strong>Tamaño:</strong> Pequeño</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Gatito rescatado en una noche fría por rumbos de San Antonio de los Buenos. Muy juguetón y dócil.</p>
+                <a href="adoptar-copito.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Copito</a>
+            </div>
+        </div>
+
+        <!-- 8. Garfi -->
+        <div class="card-mascota" data-categoria="gato">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdmQ9uNhbqgQvr22yttIUOKy5JBpV5gIM6V7RrxLbu5w&s" alt="Garfi">
+            <div class="card-info">
+                <span class="etiqueta-disponible">Disponible</span>
+                <h3>Garfi</h3>
+                <p><strong>Edad:</strong> 2 años y medio | <strong>Tamaño:</strong> Mediano</p>
+                <p class="historia-rescate"><strong>Rescate:</strong> Típico gato europeo rescatado en los patios de la delegación Centro. Independiente pero muy cariñoso con su humano.</p>
+                <a href="adoptar-garfi.html" class="btn-principal" style="display: block; text-align: center; margin-top: 15px; text-decoration: none;">Quiero Adoptar a Garfi</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Script de filtros -->
+    <script>
+        function filtrar(categoria) {
+            const botones = document.querySelectorAll('.btn-filtro');
+            botones.forEach(btn => btn.classList.remove('activo'));
+            event.target.classList.add('activo');
+
+            const tarjetas = document.querySelectorAll('.card-mascota');
+            tarjetas.forEach(tarjeta => {
+                const cat = tarjeta.getAttribute('data-categoria');
+                if (categoria === 'todos' || cat === categoria) {
+                    tarjeta.style.display = 'block';
+                } else {
+                    tarjeta.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Huellitas Comunitarias - Tijuana, B.C. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
